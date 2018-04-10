@@ -16,10 +16,14 @@ $(document).ready(function() {
 
     $('.btn-ok').click(function() {
         console.log(nums);
-        $('#exampleInputPassword1').val(nums.join(""));
-        console.log($('#exampleInputPassword1').val());
-        nums = [];
-        $('.screen').empty();
+        if (nums.length == 4) {
+            $('#exampleInputPassword1').val(nums.join(""));
+            console.log($('#exampleInputPassword1').val());
+            nums = [];
+            $('.screen').empty();
+            $('#exampleModalLong').modal('hide')
+        } else
+            alert("please enter 4 digit");
     });
 
     $('.clear').on('click', function() {
